@@ -2,10 +2,17 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Phone, User, Building2, Briefcase, MapPin } from 'lucide-react'
+import { Phone, User, Building2, Briefcase, MapPin, type LucideIcon } from 'lucide-react'
 import { PHONE_HREF, PHONE_DISPLAY } from '@/lib/utils'
 
-const contactDetails = [
+interface ContactDetail {
+  icon: LucideIcon
+  label: string
+  value: string
+  isPhone?: boolean
+}
+
+const contactDetails: ContactDetail[] = [
   { icon: User, label: "To'liq ism", value: 'Abdusodiqov Abdulaziz' },
   { icon: Building2, label: 'Kompaniya', value: 'Largo' },
   { icon: Briefcase, label: 'Kasb', value: 'Professional Yetkazib beruvchi Haydovchi' },
@@ -14,7 +21,7 @@ const contactDetails = [
 ]
 
 export default function Contact() {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
@@ -92,7 +99,7 @@ export default function Contact() {
                         {detail.value}
                       </p>
                     </div>
-                    {detail.isPhone && (
+                    {detail.isPhone === true && (
                       <a
                         href={PHONE_HREF}
                         className="flex-shrink-0 px-3 py-1.5 bg-accent-500 hover:bg-accent-600 text-white text-xs font-bold rounded-xl transition-colors duration-200"

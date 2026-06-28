@@ -1,0 +1,5 @@
+# Files that should not be uploaded to Vercel
+.next/cache
+node_modules
+*.log
+.DS_Store

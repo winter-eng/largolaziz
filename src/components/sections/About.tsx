@@ -21,7 +21,7 @@ const fadeUp = {
 }
 
 export default function About() {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
