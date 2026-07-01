@@ -4,6 +4,8 @@
 
 ### Professional Delivery Driver · Business Card Website
 
+<img src="public/largo-logo.png" alt="" width="100px" height="100px">
+
 A premium, production-ready personal portfolio website for **Abdusodiqov Abdulaziz**, a professional delivery driver working with **Largo** company. Built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion — fully in the Uzbek language.
 
 <br />
